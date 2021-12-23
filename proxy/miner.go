@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"github.com/ubiq/ubqhash"
-	"github.com/ubiq/go-ubiq/v5/common"
+	"github.com/ubiq/go-ubiq/v6/common"
 )
 
 var hasher = ubqhash.New()
