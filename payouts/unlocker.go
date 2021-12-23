@@ -31,9 +31,8 @@ type UnlockerConfig struct {
 const minDepth = 16
 
 var (
-	big2                 = big.NewInt(2)
-	big32                = big.NewInt(32)
-	BlockReward *big.Int = big.NewInt(8e+18)
+	big2  = big.NewInt(2)
+	big32 = big.NewInt(32)
 )
 
 // Donate 10% from pool fees to developers
@@ -214,43 +213,15 @@ func (u *BlockUnlocker) handleBlock(block *rpc.GetBlockReply, candidate *storage
 	candidate.Height = correctHeight
 
 	// Rewards
-	reward := new(big.Int).Set(BlockReward)
+	var reward *big.Int
 	headerNumber := big.NewInt(candidate.Height)
 
 	// If Orion use new MP
 	if headerNumber.Cmp(big.NewInt(1791793)) >= 0 {
 		reward = big.NewInt(15e+17)
 	} else {
-		// not Orion, use old MP
-		if headerNumber.Cmp(big.NewInt(358363)) > 0 {
-			reward = big.NewInt(7e+18)
-			// Year 1
-		}
-		if headerNumber.Cmp(big.NewInt(716727)) > 0 {
-			reward = big.NewInt(6e+18)
-			// Year 2
-		}
-		if headerNumber.Cmp(big.NewInt(1075090)) > 0 {
-			reward = big.NewInt(5e+18)
-			// Year 3
-		}
-		if headerNumber.Cmp(big.NewInt(1433454)) > 0 {
-			reward = big.NewInt(4e+18)
-			// Year 4
-		}
-
-		if headerNumber.Cmp(big.NewInt(1791818)) > 0 {
-			reward = big.NewInt(3e+18)
-			// Year 5
-		}
-		if headerNumber.Cmp(big.NewInt(2150181)) > 0 {
-			reward = big.NewInt(2e+18)
-			// Year 6
-		}
-		if headerNumber.Cmp(big.NewInt(2508545)) > 0 {
-			reward = big.NewInt(1e+18)
-			// Year 7
-		}
+		// Year 4 - Pre-Orion
+		reward = big.NewInt(4e+18)
 	}
 
 	// Add TX fees
@@ -548,34 +519,13 @@ func getUncleReward(uHeight, height int64) *big.Int {
 	headerNumber := big.NewInt(height)
 
 	// Rewards
-	reward := new(big.Int).Set(BlockReward)
-	if headerNumber.Cmp(big.NewInt(358363)) > 0 {
-		reward = big.NewInt(7e+18)
-		// Year 1
-	}
-	if headerNumber.Cmp(big.NewInt(716727)) > 0 {
-		reward = big.NewInt(6e+18)
-		// Year 2
-	}
-	if headerNumber.Cmp(big.NewInt(1075090)) > 0 {
-		reward = big.NewInt(5e+18)
-		// Year 3
-	}
-	if headerNumber.Cmp(big.NewInt(1433454)) > 0 {
+	var reward *big.Int
+	// If Orion use new MP
+	if headerNumber.Cmp(big.NewInt(1791793)) >= 0 {
+		reward = big.NewInt(15e+17)
+	} else {
+		// Year 4 - Pre-Orion
 		reward = big.NewInt(4e+18)
-		// Year 4
-	}
-	if headerNumber.Cmp(big.NewInt(1791818)) > 0 {
-		reward = big.NewInt(3e+18)
-		// Year 5
-	}
-	if headerNumber.Cmp(big.NewInt(2150181)) > 0 {
-		reward = big.NewInt(2e+18)
-		// Year 6
-	}
-	if headerNumber.Cmp(big.NewInt(2508545)) > 0 {
-		reward = big.NewInt(1e+18)
-		// Year 7
 	}
 
 	r := new(big.Int)

@@ -67,83 +67,56 @@ func TestWeiToShannonInt64(t *testing.T) {
 }
 
 func TestGetUncleReward(t *testing.T) {
-	rewards := make(map[int64]string)
-	expectedRewards := map[int64]string{
-		1: "4000000000000000000",
-		2: "0", //previous blocks not rewarded
-		3: "0",
-		4: "0",
-		5: "0",
-		6: "0",
+	// Year 4 - Pre-Orion
+	rewardsPreOrion := make(map[int64]string)
+	expectedRewardsPreOrion := map[int64]string{
+		1774000: "2000000000000000000",
+		1774001: "0", //previous blocks not rewarded
+		1774002: "0",
+		1774003: "0",
+		1774004: "0",
+		1774005: "0",
 	}
-	for i := int64(1); i < 7; i++ {
-		rewards[i] = getUncleReward(1, i+1).String()
+	for i := int64(1774000); i < 1774000+6; i++ {
+		rewardsPreOrion[i] = getUncleReward(1774000, i+1).String()
 	}
-	for i, reward := range rewards {
-		if expectedRewards[i] != rewards[i] {
-			t.Errorf("Incorrect uncle reward for %v, expected %v vs %v", i, expectedRewards[i], reward)
+	for i, reward := range rewardsPreOrion {
+		if expectedRewardsPreOrion[i] != rewardsPreOrion[i] {
+			t.Errorf("Incorrect uncle reward for %v, expected %v vs %v", i, expectedRewardsPreOrion[i], reward)
 		}
 	}
 
-	// Year 1
-	rewardsYear1 := make(map[int64]string)
-	expectedRewardsYear1 := map[int64]string{
-		358363: "3500000000000000000",
-		358364: "0", //previous blocks not rewarded
-		358365: "0",
-		358366: "0",
-		358367: "0",
-		358368: "0",
+	// Orion
+	rewardsOrion := make(map[int64]string)
+	expectedRewardsOrion := map[int64]string{
+		1791793: "750000000000000000",
+		1791794: "0", //previous blocks not rewarded
+		1791795: "0",
+		1791796: "0",
+		1791797: "0",
+		1791798: "0",
 	}
-	for i := int64(358363); i < 358363+6; i++ {
-		rewardsYear1[i] = getUncleReward(358363, i+1).String()
+	for i := int64(1791793); i < 1791793+6; i++ {
+		rewardsOrion[i] = getUncleReward(1791793, i+1).String()
 	}
-	for i, reward := range rewardsYear1 {
-		if expectedRewardsYear1[i] != rewardsYear1[i] {
-			t.Errorf("Incorrect uncle reward for %v, expected %v vs %v", i, expectedRewardsYear1[i], reward)
+	for i, reward := range rewardsOrion {
+		if expectedRewardsOrion[i] != rewardsOrion[i] {
+			t.Errorf("Incorrect uncle reward for %v, expected %v vs %v", i, expectedRewardsOrion[i], reward)
 		}
 	}
 
-	// Year 2
-	expectedRewardsYear2 := "3000000000000000000"
-	rewardsYear2 := getUncleReward(716727, 716727+1).String()
-	if expectedRewardsYear2 != rewardsYear2 {
-		t.Errorf("Incorrect uncle reward, expected %v vs %v", expectedRewardsYear2, rewardsYear2)
+	// Year 4 - Pre-Orion - Simple
+	expectedRewardsPreOrionSimple := "2000000000000000000"
+	rewardsPreOrionSimple := getUncleReward(1433454, 1433454+1).String()
+	if expectedRewardsPreOrionSimple != rewardsPreOrionSimple {
+		t.Errorf("Incorrect uncle reward, expected %v vs %v", expectedRewardsPreOrionSimple, rewardsPreOrionSimple)
 	}
 
-	// Year 3
-	expectedRewardsYear3 := "2500000000000000000"
-	rewardsYear3 := getUncleReward(1075090, 1075090+1).String()
-	if expectedRewardsYear3 != rewardsYear3 {
-		t.Errorf("Incorrect uncle reward, expected %v vs %v", expectedRewardsYear3, rewardsYear3)
-	}
-
-	// Year 4
-	expectedRewardsYear4 := "2000000000000000000"
-	rewardsYear4 := getUncleReward(1433454, 1433454+1).String()
-	if expectedRewardsYear4 != rewardsYear4 {
-		t.Errorf("Incorrect uncle reward, expected %v vs %v", expectedRewardsYear4, rewardsYear4)
-	}
-
-	// Year 5
-	expectedRewardsYear5 := "1500000000000000000"
-	rewardsYear5 := getUncleReward(1791818, 1791818+1).String()
-	if expectedRewardsYear5 != rewardsYear5 {
-		t.Errorf("Incorrect uncle reward, expected %v vs %v", expectedRewardsYear5, rewardsYear5)
-	}
-
-	// Year 6
-	expectedRewardsYear6 := "1000000000000000000"
-	rewardsYear6 := getUncleReward(2150181, 2150181+1).String()
-	if expectedRewardsYear6 != rewardsYear6 {
-		t.Errorf("Incorrect uncle reward, expected %v vs %v", expectedRewardsYear6, rewardsYear6)
-	}
-
-	// Year 7
-	expectedRewardsYear7 := "500000000000000000"
-	rewardsYear7 := getUncleReward(2508545, 2508545+1).String()
-	if expectedRewardsYear7 != rewardsYear7 {
-		t.Errorf("Incorrect uncle reward, expected %v vs %v", expectedRewardsYear7, rewardsYear7)
+	// Year 4 - Orion - Simple
+	expectedRewardsOrionSimple := "750000000000000000"
+	rewardsOrionSimple := getUncleReward(2000000, 2000000+1).String()
+	if expectedRewardsOrionSimple != rewardsOrionSimple {
+		t.Errorf("Incorrect uncle reward, expected %v vs %v", expectedRewardsOrionSimple, rewardsOrionSimple)
 	}
 }
 
