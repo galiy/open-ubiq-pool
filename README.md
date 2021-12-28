@@ -36,7 +36,7 @@ Clone & compile:
 
     git clone https://github.com/ubiq/open-ethereum-pool.git
     cd open-ethereum-pool
-    make
+    go build
 
 Install redis-server.
 
