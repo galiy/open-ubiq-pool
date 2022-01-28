@@ -7,7 +7,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/ubiq/go-ubiq/v6/common"
+	"github.com/ubiq/go-ubiq/v7/common"
 
 	"github.com/ubiq/open-ethereum-pool/rpc"
 	"github.com/ubiq/open-ethereum-pool/util"
@@ -101,7 +101,7 @@ func (s *ProxyServer) fetchBlockTemplate() {
 		go s.broadcastNewJobs()
 	}
 
-	if s.config.Proxy.StratumNiceHash.Enabled{
+	if s.config.Proxy.StratumNiceHash.Enabled {
 		go s.broadcastNewJobsNH()
 	}
 }

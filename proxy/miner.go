@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/ubiq/go-ubiq/v7/common"
 	"github.com/ubiq/ubqhash"
-	"github.com/ubiq/go-ubiq/v6/common"
 )
 
 var hasher = ubqhash.New()
