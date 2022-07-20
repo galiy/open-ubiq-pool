@@ -201,8 +201,13 @@ func (r *RPCClient) SendTransaction(from, to, gas, gasPrice, value string, autoG
 		"value": value,
 	}
 	if !autoGas {
+		// Sends as Legacy TX
 		params["gas"] = gas
 		params["gasPrice"] = gasPrice
+	} else {
+		// Sends as EIP1559 TX
+		params["gas"] = gas
+		params["maxPriorityFeePerGas"] = "2000000000"
 	}
 	rpcResp, err := r.doPost(r.Url, "eth_sendTransaction", []interface{}{params})
 	var reply string
