@@ -9,7 +9,7 @@ import (
 
 	"gopkg.in/redis.v3"
 
-	"github.com/ubiq/open-ethereum-pool/util"
+	"github.com/galiy/open-ubiq-pool/util"
 )
 
 type Config struct {

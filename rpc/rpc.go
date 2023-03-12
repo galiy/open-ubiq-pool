@@ -14,7 +14,7 @@ import (
 
 	"github.com/ubiq/go-ubiq/v7/common/hexutil"
 
-	"github.com/ubiq/open-ethereum-pool/util"
+	"github.com/galiy/open-ubiq-pool/util"
 )
 
 type RPCClient struct {

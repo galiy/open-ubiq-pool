@@ -9,10 +9,10 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/ubiq/open-ethereum-pool/api"
-	"github.com/ubiq/open-ethereum-pool/payouts"
-	"github.com/ubiq/open-ethereum-pool/proxy"
-	"github.com/ubiq/open-ethereum-pool/storage"
+	"github.com/galiy/open-ubiq-pool/api"
+	"github.com/galiy/open-ubiq-pool/payouts"
+	"github.com/galiy/open-ubiq-pool/proxy"
+	"github.com/galiy/open-ubiq-pool/storage"
 )
 
 var cfg proxy.Config

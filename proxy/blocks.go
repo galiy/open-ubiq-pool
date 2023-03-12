@@ -9,8 +9,8 @@ import (
 
 	"github.com/ubiq/go-ubiq/v7/common"
 
-	"github.com/ubiq/open-ethereum-pool/rpc"
-	"github.com/ubiq/open-ethereum-pool/util"
+	"github.com/galiy/open-ubiq-pool/rpc"
+	"github.com/galiy/open-ubiq-pool/util"
 )
 
 const maxBacklog = 3

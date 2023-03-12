@@ -1,6 +1,6 @@
 ## Open Source Ethereum Mining Pool
 
-[List Of Open Ethereum Pools](https://github.com/ubiq/open-ethereum-pool/wiki/List-Of-Open-Pools)
+[List Of Open Ethereum Pools](https://github.com/galiy/open-ubiq-pool/wiki/List-Of-Open-Pools)
 
 ### Features
 
@@ -34,7 +34,7 @@ First install [go-ubiq](https://github.com/ubiq/go-ubiq/wiki/Installation-Instru
 
 Clone & compile:
 
-    git clone https://github.com/ubiq/open-ethereum-pool.git
+    git clone https://github.com/galiy/open-ubiq-pool.git
     cd open-ethereum-pool
     go build
 

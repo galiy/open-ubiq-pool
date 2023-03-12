@@ -1,4 +1,4 @@
-module github.com/ubiq/open-ethereum-pool
+module github.com/galiy/open-ubiq-pool
 
 go 1.17
 

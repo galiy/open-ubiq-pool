@@ -10,9 +10,9 @@ import (
 
 	"github.com/ubiq/go-ubiq/v7/common/hexutil"
 
-	"github.com/ubiq/open-ethereum-pool/rpc"
-	"github.com/ubiq/open-ethereum-pool/storage"
-	"github.com/ubiq/open-ethereum-pool/util"
+	"github.com/galiy/open-ubiq-pool/rpc"
+	"github.com/galiy/open-ubiq-pool/storage"
+	"github.com/galiy/open-ubiq-pool/util"
 )
 
 const txCheckInterval = 5 * time.Second
