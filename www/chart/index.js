@@ -47,7 +47,7 @@ var mongoose = require('mongoose');
 var app = express();
 
 app.use(function (req, res, next) {
-	res.setHeader('Access-Control-Allow-Origin', 'http://45.63.65.79:8082');
+	//res.setHeader('Access-Control-Allow-Origin', 'http://45.63.65.79:8082');
 	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 	res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
 	next();
