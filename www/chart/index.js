@@ -88,7 +88,7 @@ var tickSchema = new mongoose.Schema({
 
 var TickModel = mongoose.model('tick', tickSchema);
 
-app.get('/api/charts', function (req, res) {
+app.get('/ubiq/api/charts', function (req, res) {
 	TickModel.find({}, function (err, data) {
 		if (err) {
 			res.send({
