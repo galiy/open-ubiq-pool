@@ -8,6 +8,7 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('account', { path: '/account/:login' }, function() {
     this.route('payouts');
+    this.route('rewards');
   });
   this.route('not-found');
 
@@ -17,10 +18,11 @@ Router.map(function() {
   });
 
   this.route('help');
+  //this.route('help-ar');
   this.route('payments');
   this.route('miners');
   this.route('about');
-  this.route('chart');
+  //this.route('about-ar');
 });
 
 export default Router;
