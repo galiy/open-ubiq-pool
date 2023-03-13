@@ -481,7 +481,7 @@ func (u *BlockUnlocker) calculateRewards(block *storage.BlockData) (*big.Rat, *b
 		totalShares += val
 	}
 
-	rewards, percents := calculateRewardsForShares(shares, block.TotalShares, minersProfit)
+	rewards, percents := calculateRewardsForShares(shares, totalShares, minersProfit)
 
 	if block.ExtraReward != nil {
 		extraReward := new(big.Rat).SetInt(block.ExtraReward)
